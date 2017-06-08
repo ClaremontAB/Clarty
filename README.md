@@ -34,3 +34,24 @@ I github finns det ett ganska bra stöd för att skapa issues där man kan lägg
 
 Vi är fortfarande otroligt mycket i uppstartsfasen av det hela, så ifall ni har några idéer eller tankar så är allt välkommet!
 
+### How to
+
+Har dockerifierat applikationen.
+Och för att det ska fungera så behöver man installera docker och docker-compose
+
+på windows finns det docker-toolbox som installerar allt åt en
+på unix så får man installera docker, och sen docker-compose separat :)
+
+```bash
+# För att köra docker (disabla enhetstesten eftersom de inte fungerar just nu)
+mvn clean install -Pdocker -DskipTests
+
+# Starta applikationen i docker containrar (user-services och postgres) (-d lägger processerna i bakgrunden)
+docker-compose up -d
+
+# För att följa loggarna
+docker-compose logs -f
+
+# För att stänga av applikationen
+docker-compose kill
+```

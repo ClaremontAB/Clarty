@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  user-services:
+    container_name: "user-services"
+    image: claremont/clarty-user-services
+    links:
+      - user-services-db:user-services-db
+    ports:
+      - "8080:8080"
+
+  user-services-db:
+    container_name: "postgresql"
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_USER=clarty
+      - POSTGRES_DB=user-services
+    ports:
+      - "5432:5432"
+
