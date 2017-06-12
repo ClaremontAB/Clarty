@@ -34,3 +34,18 @@ I github finns det ett ganska bra stöd för att skapa issues där man kan lägg
 
 Vi är fortfarande otroligt mycket i uppstartsfasen av det hela, så ifall ni har några idéer eller tankar så är allt välkommet!
 
+
+### How to
+
+Verktyg som behövs för att börja
+
+* [Maven](https://maven.apache.org/)
+* [Java](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
+
+```bash
+# För att kompilera projektet
+mvn clean install
+
+# För att starta servern
+java -jar target/clarty-user-services.jar
+```
